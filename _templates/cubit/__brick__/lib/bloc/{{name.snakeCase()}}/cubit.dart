@@ -1,0 +1,44 @@
+import 'dart:async';
+
+import 'package:lensfolio/configs/configs.dart';
+import 'package:lensfolio/models/{{name.snakeCase()}}/{{modelDir.snakeCase()}}.dart';
+import 'package:lensfolio/repos/{{name.snakeCase()}}/{{name.snakeCase()}}_repo.dart';
+import 'package:lensfolio/services/fault/faults.dart';
+
+import 'package:flutter/material.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:equatable/equatable.dart';
+
+part 'state.dart'; 
+
+class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
+  static {{name.pascalCase()}}Cubit c(BuildContext context, [bool listen = false]) =>
+      BlocProvider.of<{{name.pascalCase()}}Cubit>(context, listen: listen);
+
+  {{name.pascalCase()}}Cubit() : super({{name.pascalCase()}}State.def());
+
+  Future<void> {{methodName.camelCase()}}() async {
+    emit(
+      state.copyWith(
+        {{methodName.camelCase()}}: state.{{methodName.camelCase()}}.toLoading(),
+      ),
+    );
+    try {
+      final data = await {{name.pascalCase()}}Repo.ins.{{methodName.camelCase()}}();
+      emit(
+        state.copyWith(
+          {{methodName.camelCase()}}: state.{{methodName.camelCase()}}.toSuccess(data: data),
+        ),
+      );
+    } on Fault catch (e) {
+      emit(
+        state.copyWith(
+          {{methodName.camelCase()}}: state.{{methodName.camelCase()}}.toFailed(fault: e),
+        ),
+      );
+    }
+  }
+
+  void reset() => emit({{name.pascalCase()}}State.def());
+}
