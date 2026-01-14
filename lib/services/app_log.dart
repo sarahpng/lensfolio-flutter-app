@@ -1,8 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'firebase/crash/crashlytics.dart';
-
 enum AppLogLevel {
   debug('💬', '\x1B[37m'), // White
   info('ℹ️', '\x1B[36m'), // Cyan
@@ -37,7 +35,7 @@ extension LogExtension on Object {
     log('$color$message$reset');
 
     if (toCrashlytics && level != AppLogLevel.error) {
-      message.flog();
+      // message.flog();
     }
 
     if (level == AppLogLevel.error) {
