@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:lensfolio/models/{{name.snakeCase()}}/{{modelDir.snakeCase()}}.dart';
+import 'package:lensfolio/models/{{name.snakeCase()}}/{{model.snakeCase()}}.dart';
 import 'package:lensfolio/services/fault/faults.dart';
 
 part '{{name.snakeCase()}}_mocks.dart';
@@ -15,4 +15,6 @@ class {{name.pascalCase()}}Repo {
   /// --- repo functions --- ///
 
   Future<{{model.pascalCase()}}> {{methodName.camelCase()}}() => _{{name.pascalCase()}}Provider.{{methodName.camelCase()}}();
+
+  // [REPO_METHOD]
 }

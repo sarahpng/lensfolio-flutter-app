@@ -28,11 +28,18 @@ environment:
 vars:
   name:
     type: string
-    description: Feature name (e.g., user)
-    prompt: "Which feature are we updating?"
+    description: Your name
+    default: Dash
+    prompt: What is your name?
   methodName:
     type: string
-    prompt: "New method name (e.g., logout):"
+    description: "The name of the method (e.g., fetch)"
+    prompt: "Method name:"
   model:
     type: string
-    prompt: "Model name (e.g., UserResponse):"
+    description: "The name of the Model directory (e.g., Job)"
+    prompt: "Model name:"
+  modelDir:
+    type: string
+    description: "The name of the Model directory (e.g., Job)"
+    prompt: "Model Dir:"

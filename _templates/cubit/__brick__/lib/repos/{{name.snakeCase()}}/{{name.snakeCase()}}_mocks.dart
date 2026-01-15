@@ -5,4 +5,6 @@ class _{{name.pascalCase()}}Mocks {
   static Future<Map<String, dynamic>> {{methodName.camelCase()}}() {
     return Future.value({ 'status': 200, 'message': 'mock', 'data': {}});
   }
+
+  // [NEW_MOCK_METHOD]
 }

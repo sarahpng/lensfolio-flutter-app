@@ -15,4 +15,8 @@ class UserRepo {
   /// --- repo functions --- ///
 
   Future<UserData> login() => _UserProvider.login();
+
+  Future<UserData> register() => _UserProvider.register();
+
+  // [REPO_METHOD]
 }

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:lensfolio/configs/configs.dart';
+// [IMPORT_MARKER]
 import 'package:lensfolio/models/user/user_data.dart';
 import 'package:lensfolio/repos/user/user_repo.dart';
 import 'package:lensfolio/services/fault/faults.dart';
@@ -39,6 +40,18 @@ class UserCubit extends Cubit<UserState> {
       );
     }
   }
+
+    Future<void> register() async {
+    emit(state.copyWith(register: state.register.toLoading()));
+    try {
+      final data = await UserRepo.ins.register();
+      emit(state.copyWith(register: state.register.toSuccess(data: data)));
+    } on Fault catch (e) {
+      emit(state.copyWith(register: state.register.toFailed(fault: e)));
+    }
+  }
+
+  // [NEW_METHOD]
 
   void reset() => emit(UserState.def());
 }

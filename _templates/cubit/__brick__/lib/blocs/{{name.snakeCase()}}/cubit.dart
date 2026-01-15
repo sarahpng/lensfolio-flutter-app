@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:lensfolio/configs/configs.dart';
-import 'package:lensfolio/models/{{name.snakeCase()}}/{{modelDir.snakeCase()}}.dart';
+// [IMPORT_MARKER]
+import 'package:lensfolio/models/{{name.snakeCase()}}/{{model.snakeCase()}}.dart';
 import 'package:lensfolio/repos/{{name.snakeCase()}}/{{name.snakeCase()}}_repo.dart';
 import 'package:lensfolio/services/fault/faults.dart';
 
@@ -39,6 +40,8 @@ class {{name.pascalCase()}}Cubit extends Cubit<{{name.pascalCase()}}State> {
       );
     }
   }
+
+  // [NEW_METHOD]
 
   void reset() => emit({{name.pascalCase()}}State.def());
 }

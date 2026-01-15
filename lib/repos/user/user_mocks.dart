@@ -3,6 +3,12 @@ part of 'user_repo.dart';
 
 class _UserMocks {
   static Future<Map<String, dynamic>> login() {
-    return Future.value({'status': 200, 'message': 'mock', 'data': {}});
+    return Future.value({ 'status': 200, 'message': 'mock', 'data': {}});
   }
+
+    static Future<Map<String, dynamic>> register() {
+    return Future.value({ 'status': 200, 'message': 'mock', 'data': {}});
+  }
+
+  // [NEW_MOCK_METHOD]
 }
