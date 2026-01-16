@@ -5,6 +5,9 @@ sealed class AppColors {
   static const primary = Color(0xff723FED);
   static const secondary = Color(0xff2762EB);
 
+  static const white = Color(0xffFFFFFF);
+  static const black = Color(0xff020817);
+
   // Gradients
   static const gradientPrimary = LinearGradient(
     colors: [Color(0xff723FED), Color(0xff2762EB)],

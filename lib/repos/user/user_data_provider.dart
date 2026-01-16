@@ -1,10 +1,13 @@
 part of 'user_repo.dart';
 
 class _UserProvider {
-  static Future<UserData> login() async {
+  static Future<UserData> login(Map<String, dynamic> values) async {
     try {
+      final response = await _UserMocks.login(values['email']);
       // ignore: unused_local_variable
-      final raw = <String, dynamic>{};
+      await 1.seconds.delay;
+
+      final raw = response['data'] as Map<String, dynamic>;
       // Logic for API call would go here
       return UserData.fromJson(raw);
     } catch (e, st) {
@@ -15,7 +18,7 @@ class _UserProvider {
     }
   }
 
-    static Future<UserData> register() async {
+  static Future<UserData> register() async {
     try {
       // ignore: unused_local_variable
       final raw = <String, dynamic>{};

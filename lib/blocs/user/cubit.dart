@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
-part 'state.dart'; 
+part 'state.dart';
 
 class UserCubit extends Cubit<UserState> {
   static UserCubit c(BuildContext context, [bool listen = false]) =>
@@ -19,29 +19,17 @@ class UserCubit extends Cubit<UserState> {
 
   UserCubit() : super(UserState.def());
 
-  Future<void> login() async {
-    emit(
-      state.copyWith(
-        login: state.login.toLoading(),
-      ),
-    );
+  Future<void> login(Map<String, dynamic> values) async {
+    emit(state.copyWith(login: state.login.toLoading()));
     try {
-      final data = await UserRepo.ins.login();
-      emit(
-        state.copyWith(
-          login: state.login.toSuccess(data: data),
-        ),
-      );
+      final data = await UserRepo.ins.login(values);
+      emit(state.copyWith(login: state.login.toSuccess(data: data)));
     } on Fault catch (e) {
-      emit(
-        state.copyWith(
-          login: state.login.toFailed(fault: e),
-        ),
-      );
+      emit(state.copyWith(login: state.login.toFailed(fault: e)));
     }
   }
 
-    Future<void> register() async {
+  Future<void> register() async {
     emit(state.copyWith(register: state.register.toLoading()));
     try {
       final data = await UserRepo.ins.register();

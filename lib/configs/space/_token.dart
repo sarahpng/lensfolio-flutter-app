@@ -7,6 +7,7 @@ part of '../configs.dart';
 /// Such as horizontal padding, vertical padding, etc.
 class SpaceToken {
   static late double t00;
+  static late double t02;
   static late double t04;
   static late double t08;
   static late double t12;
@@ -20,6 +21,7 @@ class SpaceToken {
 
   static void init() {
     t00 = 0;
+    t02 = 2;
     t04 = 4;
     t08 = 8;
     t12 = 12;

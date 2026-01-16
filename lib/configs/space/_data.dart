@@ -27,6 +27,7 @@ _SpaceModelWidget _y() => _SpaceModelWidget(
 );
 
 _SpaceModelEdgeInsets _a() => _SpaceModelEdgeInsets(
+  t02: EdgeInsets.all(SpaceToken.t02),
   t04: EdgeInsets.all(SpaceToken.t04),
   t08: EdgeInsets.all(SpaceToken.t08),
   t12: EdgeInsets.all(SpaceToken.t12),
@@ -40,6 +41,7 @@ _SpaceModelEdgeInsets _a() => _SpaceModelEdgeInsets(
 );
 
 _SpaceModelEdgeInsets _h() => _SpaceModelEdgeInsets(
+  t02: EdgeInsets.symmetric(horizontal: SpaceToken.t02),
   t04: EdgeInsets.symmetric(horizontal: SpaceToken.t04),
   t08: EdgeInsets.symmetric(horizontal: SpaceToken.t08),
   t12: EdgeInsets.symmetric(horizontal: SpaceToken.t12),
@@ -53,6 +55,7 @@ _SpaceModelEdgeInsets _h() => _SpaceModelEdgeInsets(
 );
 
 _SpaceModelEdgeInsets _v() => _SpaceModelEdgeInsets(
+  t02: EdgeInsets.symmetric(vertical: SpaceToken.t02),
   t04: EdgeInsets.symmetric(vertical: SpaceToken.t04),
   t08: EdgeInsets.symmetric(vertical: SpaceToken.t08),
   t12: EdgeInsets.symmetric(vertical: SpaceToken.t12),
@@ -66,6 +69,7 @@ _SpaceModelEdgeInsets _v() => _SpaceModelEdgeInsets(
 );
 
 _SpaceModelEdgeInsets _t() => _SpaceModelEdgeInsets(
+  t02: EdgeInsets.only(top: SpaceToken.t02),
   t04: EdgeInsets.only(top: SpaceToken.t04),
   t08: EdgeInsets.only(top: SpaceToken.t08),
   t12: EdgeInsets.only(top: SpaceToken.t12),
@@ -79,6 +83,7 @@ _SpaceModelEdgeInsets _t() => _SpaceModelEdgeInsets(
 );
 
 _SpaceModelEdgeInsets _b() => _SpaceModelEdgeInsets(
+  t02: EdgeInsets.only(bottom: SpaceToken.t02),
   t04: EdgeInsets.only(bottom: SpaceToken.t04),
   t08: EdgeInsets.only(bottom: SpaceToken.t08),
   t12: EdgeInsets.only(bottom: SpaceToken.t12),
@@ -92,6 +97,7 @@ _SpaceModelEdgeInsets _b() => _SpaceModelEdgeInsets(
 );
 
 _SpaceModelEdgeInsets _r() => _SpaceModelEdgeInsets(
+  t02: EdgeInsets.only(right: SpaceToken.t02),
   t04: EdgeInsets.only(right: SpaceToken.t04),
   t08: EdgeInsets.only(right: SpaceToken.t08),
   t12: EdgeInsets.only(right: SpaceToken.t12),
@@ -105,6 +111,7 @@ _SpaceModelEdgeInsets _r() => _SpaceModelEdgeInsets(
 );
 
 _SpaceModelEdgeInsets _l() => _SpaceModelEdgeInsets(
+  t02: EdgeInsets.only(left: SpaceToken.t02),
   t04: EdgeInsets.only(left: SpaceToken.t04),
   t08: EdgeInsets.only(left: SpaceToken.t08),
   t12: EdgeInsets.only(left: SpaceToken.t12),

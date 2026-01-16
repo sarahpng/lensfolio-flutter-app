@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:lensfolio/configs/configs.dart';
 import 'package:lensfolio/models/user/user_data.dart';
 import 'package:lensfolio/services/fault/faults.dart';
 
@@ -14,7 +15,8 @@ class UserRepo {
 
   /// --- repo functions --- ///
 
-  Future<UserData> login() => _UserProvider.login();
+  Future<UserData> login(Map<String, dynamic> values) =>
+      _UserProvider.login(values);
 
   Future<UserData> register() => _UserProvider.register();
 

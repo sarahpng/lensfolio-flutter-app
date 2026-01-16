@@ -6,6 +6,7 @@ part of '../configs.dart';
 /// [Padding] as class [EdgeInsets] so this model class returns the [EdgeInsets] values
 /// that could be using anywhere padding or margins.
 class _SpaceModelEdgeInsets {
+  final EdgeInsets t02;
   final EdgeInsets t04;
   final EdgeInsets t08;
   final EdgeInsets t12;
@@ -18,6 +19,7 @@ class _SpaceModelEdgeInsets {
   final EdgeInsets t100;
 
   _SpaceModelEdgeInsets({
+    required this.t02,
     required this.t04,
     required this.t08,
     required this.t12,

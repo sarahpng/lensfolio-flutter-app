@@ -15,7 +15,7 @@ bricks:
     path: _templates/cubit
   provider:
     path: _templates/provider
-  screen:
-    path: _templates/screen
   cubit_update:
     path: _templates/cubit_update
+  screen:
+    path: _templates/screens/screen
