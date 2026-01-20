@@ -19,7 +19,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.10.0
+  sdk: 3.10.0
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -61,7 +61,7 @@ dependencies:
   recase: 4.1.0
   themed: 8.1.0
   supercharged: 2.1.1
-  navigation_history_observer: ^1.1.1
+  navigation_history_observer: 1.1.1
 
   flash: 3.1.1
   flutter_svg: 2.2.3
@@ -70,12 +70,12 @@ dependencies:
   package_info_plus: 8.3.1
   device_info_plus: 12.3.0
   connectivity_plus: 7.0.0
-  firebase_crashlytics: ^5.0.6
+  firebase_crashlytics: 5.0.6
 
-  firebase_core: ^4.3.0
+  firebase_core: 4.3.0
 
-  top_snackbar_flutter: ^3.3.0
-  html: ^0.15.6
+  top_snackbar_flutter: 3.3.0
+  html: 0.15.6
 
 dev_dependencies:
   flutter_test:
@@ -86,15 +86,15 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^6.0.0
+  flutter_lints: 6.0.0
 
   freezed: 3.2.3
   build_runner: 2.10.4
   json_serializable: 6.11.2
   flutter_gen_runner: 5.12.0
 
-  flutter_flavorizr: ^2.4.1
-  mason: ^0.1.2
+  flutter_flavorizr: 2.4.1
+  mason: 0.1.2
 
 flutter_gen:
   output: lib/gen/assets/ # Optional (default: lib/gen/)
