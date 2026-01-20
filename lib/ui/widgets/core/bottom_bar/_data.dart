@@ -6,7 +6,7 @@ final _tabs = [
   _BottomBar(
     label: 'Projects',
     path: AppRoutes.projects,
-    icon: LucideIcons.folder,
+    icon: LucideIcons.folder_open,
   ),
   _BottomBar(label: 'Letters', path: AppRoutes.letters, icon: LucideIcons.file),
 ];

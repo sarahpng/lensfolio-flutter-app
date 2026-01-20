@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Job {
 
- int get id; String get url; String get title;@JsonKey(name: 'company_name') String get comapnyName;@JsonKey(name: 'company_logo') String get comapnyLogo; String get category; List<String>? get tags; String? get jobType;@JsonKey(name: 'publication_date') DateTime get publicationDate;@JsonKey(name: 'candidate_required_location') String? get candidateRequiredLocation; String? get salary; String? get description;
+ int get id; String get url; String get title;@JsonKey(name: 'company_name') String get comapnyName;@JsonKey(name: 'company_logo') String get comapnyLogo; String get category; List<String>? get tags;@JsonKey(name: 'job_type') String? get jobType;@JsonKey(name: 'publication_date') DateTime get publicationDate;@JsonKey(name: 'candidate_required_location') String? get candidateRequiredLocation; String? get salary; String? get description;
 /// Create a copy of Job
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $JobCopyWith<$Res>  {
   factory $JobCopyWith(Job value, $Res Function(Job) _then) = _$JobCopyWithImpl;
 @useResult
 $Res call({
- int id, String url, String title,@JsonKey(name: 'company_name') String comapnyName,@JsonKey(name: 'company_logo') String comapnyLogo, String category, List<String>? tags, String? jobType,@JsonKey(name: 'publication_date') DateTime publicationDate,@JsonKey(name: 'candidate_required_location') String? candidateRequiredLocation, String? salary, String? description
+ int id, String url, String title,@JsonKey(name: 'company_name') String comapnyName,@JsonKey(name: 'company_logo') String comapnyLogo, String category, List<String>? tags,@JsonKey(name: 'job_type') String? jobType,@JsonKey(name: 'publication_date') DateTime publicationDate,@JsonKey(name: 'candidate_required_location') String? candidateRequiredLocation, String? salary, String? description
 });
 
 
@@ -161,7 +161,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String url,  String title, @JsonKey(name: 'company_name')  String comapnyName, @JsonKey(name: 'company_logo')  String comapnyLogo,  String category,  List<String>? tags,  String? jobType, @JsonKey(name: 'publication_date')  DateTime publicationDate, @JsonKey(name: 'candidate_required_location')  String? candidateRequiredLocation,  String? salary,  String? description)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String url,  String title, @JsonKey(name: 'company_name')  String comapnyName, @JsonKey(name: 'company_logo')  String comapnyLogo,  String category,  List<String>? tags, @JsonKey(name: 'job_type')  String? jobType, @JsonKey(name: 'publication_date')  DateTime publicationDate, @JsonKey(name: 'candidate_required_location')  String? candidateRequiredLocation,  String? salary,  String? description)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Job() when $default != null:
 return $default(_that.id,_that.url,_that.title,_that.comapnyName,_that.comapnyLogo,_that.category,_that.tags,_that.jobType,_that.publicationDate,_that.candidateRequiredLocation,_that.salary,_that.description);case _:
@@ -182,7 +182,7 @@ return $default(_that.id,_that.url,_that.title,_that.comapnyName,_that.comapnyLo
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String url,  String title, @JsonKey(name: 'company_name')  String comapnyName, @JsonKey(name: 'company_logo')  String comapnyLogo,  String category,  List<String>? tags,  String? jobType, @JsonKey(name: 'publication_date')  DateTime publicationDate, @JsonKey(name: 'candidate_required_location')  String? candidateRequiredLocation,  String? salary,  String? description)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String url,  String title, @JsonKey(name: 'company_name')  String comapnyName, @JsonKey(name: 'company_logo')  String comapnyLogo,  String category,  List<String>? tags, @JsonKey(name: 'job_type')  String? jobType, @JsonKey(name: 'publication_date')  DateTime publicationDate, @JsonKey(name: 'candidate_required_location')  String? candidateRequiredLocation,  String? salary,  String? description)  $default,) {final _that = this;
 switch (_that) {
 case _Job():
 return $default(_that.id,_that.url,_that.title,_that.comapnyName,_that.comapnyLogo,_that.category,_that.tags,_that.jobType,_that.publicationDate,_that.candidateRequiredLocation,_that.salary,_that.description);}
@@ -199,7 +199,7 @@ return $default(_that.id,_that.url,_that.title,_that.comapnyName,_that.comapnyLo
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String url,  String title, @JsonKey(name: 'company_name')  String comapnyName, @JsonKey(name: 'company_logo')  String comapnyLogo,  String category,  List<String>? tags,  String? jobType, @JsonKey(name: 'publication_date')  DateTime publicationDate, @JsonKey(name: 'candidate_required_location')  String? candidateRequiredLocation,  String? salary,  String? description)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String url,  String title, @JsonKey(name: 'company_name')  String comapnyName, @JsonKey(name: 'company_logo')  String comapnyLogo,  String category,  List<String>? tags, @JsonKey(name: 'job_type')  String? jobType, @JsonKey(name: 'publication_date')  DateTime publicationDate, @JsonKey(name: 'candidate_required_location')  String? candidateRequiredLocation,  String? salary,  String? description)?  $default,) {final _that = this;
 switch (_that) {
 case _Job() when $default != null:
 return $default(_that.id,_that.url,_that.title,_that.comapnyName,_that.comapnyLogo,_that.category,_that.tags,_that.jobType,_that.publicationDate,_that.candidateRequiredLocation,_that.salary,_that.description);case _:
@@ -214,7 +214,7 @@ return $default(_that.id,_that.url,_that.title,_that.comapnyName,_that.comapnyLo
 @JsonSerializable()
 
 class _Job implements Job {
-  const _Job({required this.id, required this.url, required this.title, @JsonKey(name: 'company_name') required this.comapnyName, @JsonKey(name: 'company_logo') required this.comapnyLogo, required this.category, final  List<String>? tags, this.jobType, @JsonKey(name: 'publication_date') required this.publicationDate, @JsonKey(name: 'candidate_required_location') this.candidateRequiredLocation, this.salary, this.description}): _tags = tags;
+  const _Job({required this.id, required this.url, required this.title, @JsonKey(name: 'company_name') required this.comapnyName, @JsonKey(name: 'company_logo') required this.comapnyLogo, required this.category, final  List<String>? tags, @JsonKey(name: 'job_type') this.jobType, @JsonKey(name: 'publication_date') required this.publicationDate, @JsonKey(name: 'candidate_required_location') this.candidateRequiredLocation, this.salary, this.description}): _tags = tags;
   factory _Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);
 
 @override final  int id;
@@ -232,7 +232,7 @@ class _Job implements Job {
   return EqualUnmodifiableListView(value);
 }
 
-@override final  String? jobType;
+@override@JsonKey(name: 'job_type') final  String? jobType;
 @override@JsonKey(name: 'publication_date') final  DateTime publicationDate;
 @override@JsonKey(name: 'candidate_required_location') final  String? candidateRequiredLocation;
 @override final  String? salary;
@@ -271,7 +271,7 @@ abstract mixin class _$JobCopyWith<$Res> implements $JobCopyWith<$Res> {
   factory _$JobCopyWith(_Job value, $Res Function(_Job) _then) = __$JobCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String url, String title,@JsonKey(name: 'company_name') String comapnyName,@JsonKey(name: 'company_logo') String comapnyLogo, String category, List<String>? tags, String? jobType,@JsonKey(name: 'publication_date') DateTime publicationDate,@JsonKey(name: 'candidate_required_location') String? candidateRequiredLocation, String? salary, String? description
+ int id, String url, String title,@JsonKey(name: 'company_name') String comapnyName,@JsonKey(name: 'company_logo') String comapnyLogo, String category, List<String>? tags,@JsonKey(name: 'job_type') String? jobType,@JsonKey(name: 'publication_date') DateTime publicationDate,@JsonKey(name: 'candidate_required_location') String? candidateRequiredLocation, String? salary, String? description
 });
 
 

@@ -6,6 +6,7 @@ class _ThemeModel {
   final Color text;
   final Color subText;
   final Color background;
+  final Color navbarBase;
   final Color successBase;
   final Color successShade;
   final Color successTint;
@@ -33,6 +34,7 @@ class _ThemeModel {
     required this.dangerShade,
     required this.dangerTint,
     required this.primaryGradient,
+    required this.navbarBase,
   });
 
   _ThemeModel copyWith({
@@ -41,6 +43,7 @@ class _ThemeModel {
     Color? text,
     Color? subText,
     Color? background,
+    Color? navbarBase,
     Color? successBase,
     Color? successShade,
     Color? successTint,
@@ -68,6 +71,7 @@ class _ThemeModel {
       dangerShade: dangerShade ?? this.dangerShade,
       dangerTint: dangerTint ?? this.dangerTint,
       primaryGradient: primaryGradient ?? this.primaryGradient,
+      navbarBase: navbarBase ?? this.navbarBase,
     );
   }
 }

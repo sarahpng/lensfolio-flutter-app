@@ -13,7 +13,7 @@ sealed class Job with _$Job {
     @JsonKey(name: 'company_logo') required String comapnyLogo,
     required String category,
     List<String>? tags,
-    String? jobType,
+    @JsonKey(name: 'job_type') String? jobType,
     @JsonKey(name: 'publication_date') required DateTime publicationDate,
     @JsonKey(name: 'candidate_required_location')
     String? candidateRequiredLocation,

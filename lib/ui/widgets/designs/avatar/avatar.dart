@@ -1,13 +1,22 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:lensfolio/configs/configs.dart';
 import 'package:lensfolio/gen/assets/assets.gen.dart';
+
+enum BorderType { circle, none }
 
 class Avatar extends StatelessWidget {
   final String image;
   final double? size;
+  final BorderType? borderType;
 
-  const Avatar({super.key, this.image = '', this.size});
+  const Avatar({
+    super.key,
+    this.image = '',
+    this.size,
+    this.borderType = BorderType.circle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +26,23 @@ class Avatar extends StatelessWidget {
       padding: Space.a.t02,
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.circular(360),
+        borderRadius: borderType == BorderType.circle ? 360.radius() : null,
       ),
       child: ClipRRect(
-        borderRadius: 300.radius(),
+        borderRadius: borderType == BorderType.circle
+            ? 360.radius()
+            : 0.radius(),
         child: image.isEmpty
             ? Image.asset(Assets.dummyProfile.path)
-            : CachedNetworkImage(imageUrl: image),
+            : CachedNetworkImage(
+                imageUrl: image,
+                errorWidget: (context, error, stackTrace) {
+                  return Container(
+                    color: AppTheme.c.primary.withValues(alpha: 0.1),
+                    child: Icon(LucideIcons.image, color: AppTheme.c.primary),
+                  );
+                },
+              ),
       ),
     );
   }

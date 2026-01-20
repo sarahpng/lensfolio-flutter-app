@@ -278,7 +278,14 @@ class _UserMocks {
         },
         {
           'category': 'database',
-          'technologies': ['PostgreSQL', 'MongoDB', 'BigQuery'],
+          'technologies': [
+            'PostgreSQL',
+            'MongoDB',
+            'BigQuerys',
+            'PostgreSQsL',
+            'MongoDBa',
+            'BigQueray',
+          ],
         },
         {
           'category': 'other',

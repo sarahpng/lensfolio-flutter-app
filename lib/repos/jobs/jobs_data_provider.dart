@@ -1,13 +1,17 @@
 part of 'jobs_repo.dart';
 
 class _JobsProvider {
-  static Future<Job> fetch() async {
+  static Future<JobFetchResponse> fetch() async {
     try {
       // ignore: unused_local_variable
-      final raw = <String, dynamic>{};
+      final response = await _JobsMocks.fetch();
+      // ignore: unused_local_variable
+      await 1.seconds.delay;
+      final raw = response['data'] as Map<String, Object>;
       // Logic for API call would go here
-      return Job.fromJson(raw);
+      return JobFetchResponse.fromJson(raw);
     } catch (e, st) {
+      print(e);
       if (e is DioException) {
         throw HttpFault.fromDioException(e, st);
       }

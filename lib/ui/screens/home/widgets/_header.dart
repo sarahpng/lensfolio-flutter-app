@@ -7,33 +7,69 @@ class _Header extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = UserCubit.c(context);
     final userData = user.state.login.data;
-    return Container(
-      padding: Space.a.t12,
-      decoration: BoxDecoration(gradient: AppTheme.c.primaryGradient),
-      child: Row(
-        children: [
-          Avatar(image: userData!.profilePicture!),
-          Space.x.t12,
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(userData.fullName, style: AppText.h1b + AppColors.white),
-              Text(userData.email, style: AppText.b1 + AppColors.white),
-              Space.y.t08,
-              Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.bottomLeft,
+          children: [
+            Container(
+              height: 100,
+              width: double.infinity,
+              padding: Space.a.t12,
+              decoration: BoxDecoration(
+                gradient: AppTheme.c.primaryGradient,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Icon(LucideIcons.map_pin, size: 17, color: AppColors.white),
-                  Space.x.t04,
-                  Text(
-                    userData.designation!,
-                    style: AppText.b2 + AppColors.white,
+                  PlatformPopupMenu(
+                    items: [
+                      PopUpModel(
+                        label: 'Upload Resume',
+                        icon: LucideIcons.upload,
+                      ),
+                      PopUpModel(
+                        label: 'Download CV',
+                        icon: LucideIcons.download,
+                      ),
+                      PopUpModel(label: 'Logout', icon: LucideIcons.power),
+                    ],
+                    onSelected: (value) {},
+                    child: Icon(
+                      LucideIcons.ellipsis_vertical,
+                      size: SpaceToken.t24,
+                      color: AppTheme.c.navbarBase,
+                    ),
+                  ),
+
+                  AppButton(
+                    icon: LucideIcons.pen,
+                    size: AppButtonSize.small,
+                    style: AppButtonStyle.white,
+                    padding: Space.sym(10, 4),
+                    label: 'Edit',
                   ),
                 ],
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+            Positioned(
+              top: SpaceToken.t60,
+              left: SpaceToken.t12,
+              child: Avatar(image: userData!.profilePicture!),
+            ),
+          ],
+        ),
+        Space.y.t32,
+        Text(userData.fullName, style: AppText.h1b),
+        Text(
+          userData.designation!,
+          style: AppText.h3.w(5) + AppTheme.c.secondary,
+        ),
+      ],
     );
   }
 }

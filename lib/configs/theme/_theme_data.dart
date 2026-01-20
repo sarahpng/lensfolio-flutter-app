@@ -9,6 +9,7 @@ const _lightTheme = _ThemeModel(
   text: AppColorsLight.text,
   subText: AppColorsLight.subText,
   background: AppColorsLight.background,
+  navbarBase: AppColorsLight.navbar,
 
   // success
   successBase: AppColorsLight.successBase,
@@ -38,6 +39,7 @@ const _darkTheme = _ThemeModel(
   text: AppColorsDark.text,
   subText: AppColorsDark.subText,
   background: AppColorsDark.background,
+  navbarBase: AppColorsDark.background,
 
   // success
   successBase: AppColorsDark.successBase,

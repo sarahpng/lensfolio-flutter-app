@@ -4,6 +4,7 @@ enum AppButtonStyle {
   primary,
   primaryBorder,
   black,
+  white,
   blackBorder,
   secondary,
   error,

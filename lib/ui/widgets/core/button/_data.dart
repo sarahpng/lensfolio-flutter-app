@@ -58,6 +58,19 @@ Map<AppButtonStyle, _AppButtonModel> _mapPropsToData() {
         AppButtonState.disabled: AppTheme.c.background.withValues(alpha: 0.7),
       },
     ),
+    AppButtonStyle.white: _AppButtonModel(
+      surface: {
+        AppButtonState.def: Colors.white,
+        AppButtonState.pressed:
+            Colors.grey[200]!, // Light grey to show feedback
+        AppButtonState.disabled: Colors.white.withValues(alpha: 0.5),
+      },
+      text: {
+        AppButtonState.def: Colors.black,
+        AppButtonState.pressed: Colors.black,
+        AppButtonState.disabled: Colors.black.withValues(alpha: 0.5),
+      },
+    ),
     AppButtonStyle.black: _AppButtonModel(
       surface: {
         AppButtonState.def: AppTheme.c.text,

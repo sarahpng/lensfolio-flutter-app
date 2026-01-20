@@ -1,11 +1,11 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:lensfolio/blocs/user/cubit.dart';
 import 'package:lensfolio/configs/configs.dart';
 import 'package:lensfolio/ui/widgets/core/button/button.dart';
 import 'package:lensfolio/ui/widgets/designs/avatar/avatar.dart';
-import 'package:lensfolio/ui/widgets/headless/scroll_column_expandable.dart';
+import 'package:lensfolio/ui/widgets/designs/pop_up_menu/_model.dart';
+import 'package:lensfolio/ui/widgets/designs/pop_up_menu/pop_up_menu.dart';
 import 'package:provider/provider.dart';
 
 import 'package:lensfolio/ui/widgets/core/screen/screen.dart';
@@ -15,6 +15,9 @@ part 'widgets/_body.dart';
 part 'widgets/_header.dart';
 part 'widgets/_about.dart';
 part 'widgets/_contacts.dart';
+part 'widgets/_skills.dart';
+part 'widgets/_tech_stack.dart';
+part 'widgets/_preferred_roles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

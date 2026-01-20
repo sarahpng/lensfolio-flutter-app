@@ -17,14 +17,13 @@ class BottomBar extends StatelessWidget {
 
     return Container(
       padding: Space.z.sb(8).t(8),
-      color: AppTheme.c.background,
+      color: AppTheme.c.navbarBase,
       child: Material(
         color: Colors.transparent,
         child: Row(
           children: _tabs.map((tab) {
             final isActive = tab.path == currentPath;
             final color = isActive ? AppTheme.c.primary : AppTheme.c.subText;
-            final textColor = isActive ? Colors.white : AppTheme.c.subText;
             return Expanded(
               child: AppTouch(
                 onTap: () {
@@ -34,13 +33,10 @@ class BottomBar extends StatelessWidget {
                 child: Column(
                   children: [
                     Space.x.t04,
-                    Container(
-                      padding: Space.a.t08,
-                      decoration: BoxDecoration(
-                        borderRadius: 10.radius(),
-                        gradient: isActive ? AppTheme.c.primaryGradient : null,
-                      ),
-                      child: Icon(tab.icon, color: textColor),
+                    Icon(
+                      tab.icon,
+                      color: color,
+                      fontWeight: isActive ? FontWeight.w600 : null,
                     ),
                     Space.y.t04,
                     Text(tab.label, style: AppText.b1b + color),
