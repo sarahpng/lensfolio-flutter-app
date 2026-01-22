@@ -12,7 +12,7 @@ sealed class AppColors {
   static const gradientPrimary = LinearGradient(
     colors: [primary, secondary],
     begin: Alignment.centerLeft,
-    end: Alignment.bottomRight,
+    end: Alignment.centerRight,
   );
 }
 
