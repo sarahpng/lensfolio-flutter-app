@@ -77,6 +77,8 @@ dependencies:
   top_snackbar_flutter: 3.3.0
   html: 0.15.6
 
+  # flutter_flavorizr: 2.4.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -93,7 +95,6 @@ dev_dependencies:
   json_serializable: 6.11.2
   flutter_gen_runner: 5.12.0
 
-  flutter_flavorizr: 2.4.1
   mason: 0.1.2
 
 flutter_gen:
@@ -116,6 +117,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - creds.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -142,5 +144,46 @@ flutter:
           weight: 600
         - asset: fonts/nunito/Nunito-Bold.ttf
           weight: 700
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
+
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor"
+    ios: {}
+
+  flavors:
+    stage:
+      app:
+        name: "Lens-Stage"
+      android:
+        applicationId: "com.example.lensfolio.stage"
+        firebase:
+          config: ".firebase/stage/google-services.json"
+      ios:
+        bundleId: "com.example.lensfolio.stage"
+        firebase:
+          config: ".firebase/stage/GoogleService-Info.plist"
+
+    qa:
+      app:
+        name: "Lens-QA"
+      android:
+        applicationId: "com.example.lensfolio.qa"
+        firebase:
+          config: ".firebase/qa/google-services.json"
+      ios:
+        bundleId: "com.example.lensfolio.qa"
+        firebase:
+          config: ".firebase/qa/GoogleService-Info.plist"
+
+    prod:
+      app:
+        name: "Lensfolio"
+      android:
+        applicationId: "com.example.lensfolio"
+        firebase:
+          config: ".firebase/prod/google-services.json"
+      ios:
+        bundleId: "com.example.lensfolio"
+        firebase:
+          config: ".firebase/prod/GoogleService-Info.plist"

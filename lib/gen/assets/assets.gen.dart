@@ -17,9 +17,10 @@ class Assets {
   static const AssetGenImage dummyProfile = AssetGenImage(
     'assets/dummy_profile.jpg',
   );
+  static const String creds = 'creds.json';
 
   /// List of all assets
-  static List<AssetGenImage> get values => [dummyProfile];
+  static List<dynamic> get values => [dummyProfile, creds];
 }
 
 class AssetGenImage {
