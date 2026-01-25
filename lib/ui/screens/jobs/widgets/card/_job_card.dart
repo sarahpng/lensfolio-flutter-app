@@ -16,8 +16,8 @@ class _JobCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Avatar(image: job.comapnyLogo, borderType: BorderType.none),
-              Space.x.t08,
+              // Avatar(image: job.comapnyLogo, borderType: BorderType.none),
+              // Space.x.t08,
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

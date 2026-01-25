@@ -46,6 +46,10 @@ class AppFlavor {
               .last
               .toLowerCase();
 
+      if (kDebugMode) {
+        print('package name: ${packageInfo.packageName}');
+      }
+
       flavor = switch (flavorString) {
         'stage' => Flavor.stage,
         'qa' => Flavor.qa,
