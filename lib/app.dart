@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lensfolio/blocs/jobs/cubit.dart';
+import 'package:lensfolio/blocs/projects/cubit.dart';
 import 'package:lensfolio/blocs/user/cubit.dart';
 import 'package:lensfolio/configs/configs.dart';
 import 'package:lensfolio/provider/app.dart';
@@ -36,6 +37,7 @@ class _LensfolioState extends State<Lensfolio> {
         // blocs
         BlocProvider(create: (_) => UserCubit()),
         BlocProvider(create: (_) => JobsCubit()),
+        BlocProvider(create: (_) => ProjectsCubit()),
 
         // providers
         Provider(create: (_) => Connectivity()),

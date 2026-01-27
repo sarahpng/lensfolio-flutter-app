@@ -6,6 +6,9 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     App.init(context);
+    final projectsCubit = ProjectsCubit.c(context, true);
+    final projectsState = projectsCubit.state;
+    final projects = projectsState.projects;
 
     return Screen(
       bottomBar: true,
@@ -15,7 +18,7 @@ class _Body extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [_Header()],
+            children: [_Header(), Text(projects?[0].title ?? 'No Projects')],
           ),
         ),
       ),
