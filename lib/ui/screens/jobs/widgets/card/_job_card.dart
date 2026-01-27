@@ -76,18 +76,25 @@ class _JobCard extends StatelessWidget {
               maxLines: 5,
             ),
           ],
-          Space.y.t12,
+          Space.y.t08,
+          Text(
+            job.publicationDate.timeAgoShort,
+            style: AppText.b1 + AppTheme.c.subText,
+          ),
+          Space.y.t16,
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: .end,
             children: [
-              Text(
-                job.publicationDate.timeAgoShort,
-                style: AppText.b1 + AppTheme.c.subText,
-              ),
               AppButton(
-                style: AppButtonStyle.primaryBorder,
-                label: 'Apply Now',
                 icon: LucideIcons.square_arrow_out_up_right,
+                label: 'Apply Now',
+                style: AppButtonStyle.transparent,
+                onTap: () {},
+              ),
+              Space.x.t08,
+              AppButton(
+                label: 'Generate Letter',
+                style: AppButtonStyle.primary,
               ),
             ],
           ),
