@@ -8,6 +8,7 @@ import 'package:lensfolio/ui/widgets/designs/pop_up_menu/_model.dart';
 class PlatformPopupMenu extends StatelessWidget {
   final List<PopUpModel> items;
   final Widget child;
+
   final Function(String) onSelected;
 
   const PlatformPopupMenu({
@@ -21,6 +22,7 @@ class PlatformPopupMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     if (Platform.isIOS) {
       return PopupMenuButton<String>(
+        routeSettings: const RouteSettings(name: '/popup-menu'),
         onSelected: onSelected,
         offset: const Offset(0, 30), // Positions it below the button
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -58,6 +60,7 @@ class PlatformPopupMenu extends StatelessWidget {
 
     return PopupMenuButton<String>(
       onSelected: onSelected,
+      routeSettings: const RouteSettings(name: '/popup-menu'),
       itemBuilder: (context) => items.map((item) {
         return PopupMenuItem(
           value: item.label,

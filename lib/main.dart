@@ -14,8 +14,8 @@ void main() async {
 
   // print('Initialized firebase with name: ${Firebase.app().name}');
 
-  // await EnhancedCrashlytics.ins.init();
-  // await AppPerformance.ins.init();
+  await EnhancedCrashlytics.ins.init();
+  await AppPerformance.ins.init();
 
   runApp(const Lensfolio());
 }
