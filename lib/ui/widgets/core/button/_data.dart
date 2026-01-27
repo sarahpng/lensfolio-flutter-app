@@ -10,6 +10,13 @@ Map<AppButtonSize, TextStyle> _mapSizeToFontSize() {
 
 Map<AppButtonStyle, _AppButtonModel> _mapPropsToData() {
   return {
+    AppButtonStyle.transparent: _AppButtonModel(
+      surface: {AppButtonState.def: Colors.transparent},
+      text: {
+        AppButtonState.def: AppTheme.c.primary,
+        AppButtonState.pressed: AppTheme.c.secondary,
+      },
+    ),
     AppButtonStyle.primary: _AppButtonModel(
       text: {AppButtonState.def: AppTheme.c.background},
       surface: {

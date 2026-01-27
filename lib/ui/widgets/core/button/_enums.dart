@@ -9,6 +9,7 @@ enum AppButtonStyle {
   secondary,
   error,
   success,
+  transparent,
 }
 
 enum AppButtonSize { small, medium, large }
