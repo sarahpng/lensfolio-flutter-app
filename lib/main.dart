@@ -8,7 +8,10 @@ import 'package:lensfolio/services/flavor/flavor.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppFlavor.init();
-  // await Firebase.initializeApp();
+  await Firebase.initializeApp();
+  debugPrint('🔥 Firebase Project ID: ${Firebase.app().options.projectId}');
+  debugPrint('🔥 Firebase App ID: ${Firebase.app().options.appId}');
+
   // print('Initialized firebase with name: ${Firebase.app().name}');
 
   // await EnhancedCrashlytics.ins.init();

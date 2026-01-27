@@ -54,4 +54,5 @@ app.*.map.json
 creds.json
 
 GEMINI.md
+firebase.json
 
