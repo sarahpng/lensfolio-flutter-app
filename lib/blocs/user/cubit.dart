@@ -22,18 +22,21 @@ class UserCubit extends Cubit<UserState> {
   Future<void> login(Map<String, dynamic> values) async {
     emit(state.copyWith(login: state.login.toLoading()));
     try {
-      final data = await UserRepo.ins.login(values);
-      emit(state.copyWith(login: state.login.toSuccess(data: data)));
+      final authResponse = await UserRepo.ins.login(values);
+      final user = authResponse.user;
+      final userData = await UserRepo.ins.fetch(user!.email!)
+        ..toCache();
+      emit(state.copyWith(login: state.login.toSuccess(data: userData)));
     } on Fault catch (e) {
       emit(state.copyWith(login: state.login.toFailed(fault: e)));
     }
   }
 
-  Future<void> register() async {
+  Future<void> register(Map<String, dynamic> values) async {
     emit(state.copyWith(register: state.register.toLoading()));
     try {
-      final data = await UserRepo.ins.register();
-      emit(state.copyWith(register: state.register.toSuccess(data: data)));
+      await UserRepo.ins.register(values);
+      emit(state.copyWith(register: state.register.toSuccess()));
     } on Fault catch (e) {
       emit(state.copyWith(register: state.register.toFailed(fault: e)));
     }

@@ -30,7 +30,7 @@ class _Contact extends StatelessWidget {
                   Text(userData!.email, style: AppText.b1 + AppTheme.c.subText),
                 ],
               ),
-              if (userData.details!.address.isNotEmpty) ...[
+              if (userData.contactDetails!.address.isNotEmpty) ...[
                 Space.y.t04,
                 Row(
                   children: [
@@ -41,13 +41,13 @@ class _Contact extends StatelessWidget {
                     ),
                     Space.x.t08,
                     Text(
-                      userData.details!.address,
+                      userData.contactDetails!.address,
                       style: AppText.b1 + AppTheme.c.subText,
                     ),
                   ],
                 ),
               ],
-              if (userData.details!.phoneNumber.isNotEmpty) ...[
+              if (userData.contactDetails!.phoneNumber.isNotEmpty) ...[
                 Space.y.t04,
                 Row(
                   children: [
@@ -58,7 +58,7 @@ class _Contact extends StatelessWidget {
                     ),
                     Space.x.t08,
                     Text(
-                      userData.details!.phoneNumber,
+                      userData.contactDetails!.phoneNumber,
                       style: AppText.b1 + AppTheme.c.subText,
                     ),
                   ],

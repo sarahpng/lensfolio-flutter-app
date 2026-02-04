@@ -15,14 +15,13 @@ import 'package:provider/provider.dart';
 
 import 'package:lensfolio/ui/widgets/core/screen/screen.dart';
 
-part 'listeners/_login.dart';
+part '_state.dart';
 part 'static/_form_data.dart';
 part 'static/_form_keys.dart';
+part 'listeners/_register.dart';
 
-part '_state.dart';
-
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +44,13 @@ class _Body extends StatelessWidget {
       formKey: screenState.formKey,
       initialFormValue: _FormData.initialValues(),
       keyboardHandler: true,
-      belowBuilders: const [_LoginListener()],
+      belowBuilders: const [_RegisterListener()],
       child: SafeArea(
         child: ScrollColumnExpandable(
           padding: Space.a.t20,
-          crossAxisAlignment: .stretch,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text('Login', style: AppText.h2b),
+            Text('Register', style: AppText.h2b),
             Space.y.t04,
             Text(
               'Welcome back to Lensfolio. Please enter your email and password to continue.',
@@ -75,25 +74,13 @@ class _Body extends StatelessWidget {
               ),
               obscureText: true,
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Forgot Password?',
-                  style:
-                      AppText.b1b.cl(AppTheme.c.primary) +
-                      TextDecoration.underline,
-                ),
-              ),
-            ),
-            Space.y.t12,
+            Space.y.t28,
             BlocBuilder<UserCubit, UserState>(
               buildWhen: (a, b) => a.login != b.login,
               builder: (context, state) {
                 final loading = state.login.isLoading;
                 return AppButton(
-                  label: 'Login',
+                  label: 'Register',
                   onTap: () => screenState.onSubmit(context),
                   state: loading ? .disabled : .def,
                 );
@@ -103,15 +90,15 @@ class _Body extends StatelessWidget {
             Center(
               child: Text.rich(
                 TextSpan(
-                  text: "Don't have an account? ",
+                  text: "Already have an account? ",
                   style: AppText.b1,
                   children: [
                     WidgetSpan(
                       alignment: PlaceholderAlignment.middle,
                       child: GestureDetector(
-                        onTap: () => AppRoutes.register.push(context),
+                        onTap: () => ''.pop(context),
                         child: Text(
-                          'Register',
+                          'Login',
                           style: AppText.b1b.cl(AppTheme.c.primary),
                         ),
                       ),
