@@ -5,15 +5,17 @@ class _UserMocks {
   static final List<Map<String, dynamic>> _users = [
     {
       'id': 1,
-      'fullName': 'John Doe',
+      'uid': 'user-uuid-001',
+      'full_name': 'John Doe',
       'email': 'john.doe@example.com',
       'designation': 'Senior Flutter Developer',
-      'cityState': 'San Francisco, CA',
-      'profilePicture': 'https://picsum.photos/400',
+      'city_state': 'San Francisco, CA',
+      'profile_picture': 'https://picsum.photos/400',
+      'resume_url': null,
       'about':
           'Passionate Flutter developer with 5+ years of experience building scalable mobile applications. Love creating beautiful UIs and solving complex problems.',
       'website': 'https://johndoe.dev',
-      'details': {
+      'contact_details': {
         'phoneNumber': '+1 (555) 123-4567',
         'address': '123 Main St, San Francisco, CA 94105',
       },
@@ -26,7 +28,7 @@ class _UserMocks {
         'CI/CD',
         'Git',
       ],
-      'techStack': [
+      'tech_stack': [
         {
           'category': 'frontend',
           'technologies': ['Flutter', 'React', 'HTML/CSS', 'JavaScript'],
@@ -44,24 +46,26 @@ class _UserMocks {
           'technologies': ['Docker', 'GitHub Actions', 'Firebase Hosting'],
         },
       ],
-      'preferredRoles': [
+      'preferred_roles': [
         'Mobile Developer',
         'Flutter Developer',
         'Full Stack Developer',
       ],
-      'createdAt': '2023-01-15T10:30:00.000Z',
+      'created_at': '2023-01-15T10:30:00.000Z',
     },
     {
       'id': 2,
-      'fullName': 'Hassam Talha',
+      'uid': 'user-uuid-002',
+      'full_name': 'Hassam Talha',
       'email': 'hassamtalha@gmail.com',
       'designation': 'Full Stack Developer',
-      'cityState': 'Karachi, Pakistan',
-      'profilePicture': 'https://picsum.photos/401',
+      'city_state': 'Karachi, Pakistan',
+      'profile_picture': 'https://picsum.photos/401',
+      'resume_url': null,
       'about':
           'Experienced full stack developer specializing in React and Node.js. Passionate about building performant web applications and mentoring junior developers.',
       'website': 'https://hassamtalha.dev',
-      'details': {
+      'contact_details': {
         'phoneNumber': '+92 (300) 123-4567',
         'address': 'DHA Phase 5, Karachi, Pakistan',
       },
@@ -74,7 +78,7 @@ class _UserMocks {
         'Docker',
         'GraphQL',
       ],
-      'techStack': [
+      'tech_stack': [
         {
           'category': 'frontend',
           'technologies': ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
@@ -92,24 +96,26 @@ class _UserMocks {
           'technologies': ['AWS', 'Docker', 'Kubernetes', 'Jenkins'],
         },
       ],
-      'preferredRoles': [
+      'preferred_roles': [
         'Full Stack Developer',
         'Backend Developer',
         'Team Lead',
       ],
-      'createdAt': '2023-03-20T08:15:00.000Z',
+      'created_at': '2023-03-20T08:15:00.000Z',
     },
     {
       'id': 3,
-      'fullName': 'Tayyba Adien',
+      'uid': 'user-uuid-003',
+      'full_name': 'Tayyba Adien',
       'email': 'tayybaadien@gmail.com',
       'designation': 'UI/UX Designer & Frontend Developer',
-      'cityState': 'Lahore, Pakistan',
-      'profilePicture': 'https://picsum.photos/402',
+      'city_state': 'Lahore, Pakistan',
+      'profile_picture': 'https://picsum.photos/402',
+      'resume_url': null,
       'about':
           'Creative designer turned developer with a keen eye for aesthetics. I bridge the gap between design and code to create delightful user experiences.',
       'website': 'https://tayybaadien.com',
-      'details': {
+      'contact_details': {
         'phoneNumber': '+92 (321) 987-6543',
         'address': 'Gulberg III, Lahore, Pakistan',
       },
@@ -122,7 +128,7 @@ class _UserMocks {
         'Animation',
         'Prototyping',
       ],
-      'techStack': [
+      'tech_stack': [
         {
           'category': 'frontend',
           'technologies': ['Flutter', 'React', 'Vue.js', 'Svelte'],
@@ -136,24 +142,26 @@ class _UserMocks {
           'technologies': ['Framer Motion', 'GSAP', 'Lottie'],
         },
       ],
-      'preferredRoles': [
+      'preferred_roles': [
         'UI/UX Designer',
         'Frontend Developer',
         'Product Designer',
       ],
-      'createdAt': '2023-05-10T14:30:00.000Z',
+      'created_at': '2023-05-10T14:30:00.000Z',
     },
     {
       'id': 4,
-      'fullName': 'Sana Ullah',
+      'uid': 'user-uuid-004',
+      'full_name': 'Sana Ullah',
       'email': 'sanaullah@gmail.com',
       'designation': 'DevOps Engineer',
-      'cityState': 'Islamabad, Pakistan',
-      'profilePicture': 'https://picsum.photos/403',
+      'city_state': 'Islamabad, Pakistan',
+      'profile_picture': 'https://picsum.photos/403',
+      'resume_url': null,
       'about':
           'DevOps specialist focused on automating infrastructure and improving deployment pipelines. Strong advocate for infrastructure as code and continuous delivery.',
       'website': 'https://sanaullah.tech',
-      'details': {
+      'contact_details': {
         'phoneNumber': '+92 (333) 456-7890',
         'address': 'F-7 Sector, Islamabad, Pakistan',
       },
@@ -166,7 +174,7 @@ class _UserMocks {
         'Linux',
         'Python',
       ],
-      'techStack': [
+      'tech_stack': [
         {
           'category': 'devops',
           'technologies': ['Kubernetes', 'Docker', 'Terraform', 'Ansible'],
@@ -184,24 +192,26 @@ class _UserMocks {
           'technologies': ['AWS', 'GCP', 'Azure', 'Jenkins', 'GitLab CI'],
         },
       ],
-      'preferredRoles': [
+      'preferred_roles': [
         'DevOps Engineer',
         'Cloud Architect',
         'Site Reliability Engineer',
       ],
-      'createdAt': '2023-02-28T11:00:00.000Z',
+      'created_at': '2023-02-28T11:00:00.000Z',
     },
     {
       'id': 5,
-      'fullName': 'Arsalan Noor',
+      'uid': 'user-uuid-005',
+      'full_name': 'Arsalan Noor',
       'email': 'arsalannoor@gmail.com',
       'designation': 'Mobile App Developer',
-      'cityState': 'Dubai, UAE',
-      'profilePicture': 'https://picsum.photos/404',
+      'city_state': 'Dubai, UAE',
+      'profile_picture': 'https://picsum.photos/404',
+      'resume_url': null,
       'about':
           'Mobile app developer with expertise in both Flutter and React Native. Love building cross-platform apps that feel native on every platform.',
       'website': 'https://arsalannoor.io',
-      'details': {
+      'contact_details': {
         'phoneNumber': '+971 (50) 234-5678',
         'address': 'Dubai Marina, Dubai, UAE',
       },
@@ -214,7 +224,7 @@ class _UserMocks {
         'SQLite',
         'App Store Optimization',
       ],
-      'techStack': [
+      'tech_stack': [
         {
           'category': 'frontend',
           'technologies': [
@@ -241,24 +251,26 @@ class _UserMocks {
           ],
         },
       ],
-      'preferredRoles': [
+      'preferred_roles': [
         'Mobile Developer',
         'Flutter Developer',
         'React Native Developer',
       ],
-      'createdAt': '2023-04-18T09:45:00.000Z',
+      'created_at': '2023-04-18T09:45:00.000Z',
     },
     {
       'id': 6,
-      'fullName': 'Sarah Waseem',
-      'email': 'sarahwaseem@gmail.com',
+      'uid': 'user-uuid-006',
+      'full_name': 'Sarah Waseem',
+      'email': 'sarahwaseem21@gmail.com',
       'designation': 'Data Scientist & ML Engineer',
-      'cityState': 'Rawalpindi, Pakistan',
-      'profilePicture': 'https://picsum.photos/405',
+      'city_state': 'Rawalpindi, Pakistan',
+      'profile_picture': 'https://picsum.photos/405',
+      'resume_url': '',
       'about':
           'Data scientist passionate about machine learning and AI. Experienced in building predictive models and deploying ML solutions in production environments.',
       'website': 'https://sarahwaseem.ai',
-      'details': {
+      'contact_details': {
         'phoneNumber': '+92 (345) 678-9012',
         'address': 'Bahria Town, Rawalpindi, Pakistan',
       },
@@ -271,21 +283,14 @@ class _UserMocks {
         'SQL',
         'Data Visualization',
       ],
-      'techStack': [
+      'tech_stack': [
         {
           'category': 'backend',
           'technologies': ['Python', 'FastAPI', 'Django', 'Flask'],
         },
         {
           'category': 'database',
-          'technologies': [
-            'PostgreSQL',
-            'MongoDB',
-            'BigQuerys',
-            'PostgreSQsL',
-            'MongoDBa',
-            'BigQueray',
-          ],
+          'technologies': ['PostgreSQL', 'MongoDB', 'BigQuery'],
         },
         {
           'category': 'other',
@@ -296,17 +301,17 @@ class _UserMocks {
           'technologies': ['Docker', 'AWS SageMaker', 'Airflow'],
         },
       ],
-      'preferredRoles': ['Data Scientist', 'ML Engineer', 'AI Researcher'],
-      'createdAt': '2023-06-05T16:20:00.000Z',
+      'preferred_roles': ['Data Scientist', 'ML Engineer', 'AI Researcher'],
+      'created_at': '2023-06-05T16:20:00.000Z',
     },
   ];
+
   static Future<Map<String, dynamic>> login(String email) {
     final userData = _users.firstWhere(
       (user) => user['email'] == email,
       orElse: () => {},
     );
 
-    // If user not found, return error
     if (userData.isEmpty) {
       return Future.value({
         'status': 404,
@@ -315,7 +320,6 @@ class _UserMocks {
       });
     }
 
-    // Return user data
     return Future.value({
       'status': 200,
       'message': 'User has been logged in!',
@@ -326,6 +330,4 @@ class _UserMocks {
   static Future<Map<String, dynamic>> register() {
     return Future.value({'status': 200, 'message': 'mock', 'data': {}});
   }
-
-  // [NEW_MOCK_METHOD]
 }

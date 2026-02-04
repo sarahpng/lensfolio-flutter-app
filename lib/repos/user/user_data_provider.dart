@@ -1,32 +1,77 @@
 part of 'user_repo.dart';
 
 class _UserProvider {
-  static Future<UserData> login(Map<String, dynamic> values) async {
+  static Future<UserData> fetch(String email) async {
+    print('email is $email');
     try {
-      final response = await _UserMocks.login(values['email']);
-      // ignore: unused_local_variable
-      await 1.seconds.delay;
-
-      final raw = response['data'] as Map<String, dynamic>;
-      // Logic for API call would go here
-      return UserData.fromJson(raw);
+      // final user = await _UserMocks.login(email);
+      final user = await AppSupabase.supabase
+          .from(SupaTables.users)
+          .select('*')
+          .eq('email', email)
+          .single();
+      // return UserData.fromJson(user['data']);
+      print(user);
+      return UserData.fromJson(user);
     } catch (e, st) {
-      if (e is DioException) {
-        throw HttpFault.fromDioException(e, st);
+      if (e is AuthApiException) {
+        throw SupaAuthFault.fromAuthApiException(e, st);
+      }
+      if (e is PostgrestException) {
+        throw SupaPostgresFault.fromPostgrestException(e, st);
       }
       throw UnknownFault('Something went wrong!', st);
     }
   }
 
-  static Future<UserData> register() async {
+  static Future<AuthResponse> login(Map<String, dynamic> values) async {
     try {
-      // ignore: unused_local_variable
-      final raw = <String, dynamic>{};
-      // Logic for API call would go here
+      final authResponse = await AppSupabase.supabase.auth.signInWithPassword(
+        email: values['email'],
+        password: values['password'],
+      );
+      return authResponse;
+    } catch (e, st) {
+      if (e is AuthApiException) {
+        throw SupaAuthFault.fromAuthApiException(e, st);
+      }
+      throw UnknownFault('Something went wrong!', st);
+    }
+  }
+
+  static Future<AuthResponse> register(Map<String, dynamic> values) async {
+    try {
+      final authResponse = await AppSupabase.supabase.auth.signUp(
+        email: values['email'],
+        password: values['password'],
+      );
+      return authResponse;
+    } catch (e, st) {
+      if (e is AuthApiException) {
+        throw SupaAuthFault.fromAuthApiException(e, st);
+      }
+      throw UnknownFault('Something went wrong!', st);
+    }
+  }
+
+  static Future<UserData> udpate(Map<String, dynamic> values) async {
+    try {
+      final userId = values['id'] as int;
+      final updatedUser = await AppSupabase.supabase
+          .from(SupaTables.users)
+          .update(values)
+          .eq('id', userId)
+          .select()
+          .single();
+
+      final raw = updatedUser['data'] as Map<String, dynamic>;
       return UserData.fromJson(raw);
     } catch (e, st) {
-      if (e is DioException) {
-        throw HttpFault.fromDioException(e, st);
+      if (e is AuthApiException) {
+        throw SupaAuthFault.fromAuthApiException(e, st);
+      }
+      if (e is PostgrestException) {
+        throw SupaPostgresFault.fromPostgrestException(e, st);
       }
       throw UnknownFault('Something went wrong!', st);
     }
