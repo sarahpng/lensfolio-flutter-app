@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:lensfolio/blocs/user/cubit.dart';
 import 'package:lensfolio/configs/configs.dart';
@@ -16,8 +17,11 @@ import 'package:provider/provider.dart';
 import 'package:lensfolio/ui/widgets/core/screen/screen.dart';
 
 part 'listeners/_login.dart';
+
 part 'static/_form_data.dart';
 part 'static/_form_keys.dart';
+
+part 'widgets/_header.dart';
 
 part '_state.dart';
 
@@ -49,19 +53,15 @@ class _Body extends StatelessWidget {
       child: SafeArea(
         child: ScrollColumnExpandable(
           padding: Space.a.t20,
-          crossAxisAlignment: .stretch,
+          crossAxisAlignment: .center,
           children: [
-            Text('Login', style: AppText.h2b),
-            Space.y.t04,
-            Text(
-              'Welcome back to Lensfolio. Please enter your email and password to continue.',
-              style: AppText.b1,
-            ),
-            Space.y.t32,
+            _Header(),
+            Space.y.t20,
             AppFormTextInput(
               name: _FormKeys.email,
               validators: Validators.email(),
               heading: 'Email',
+              prefixIcon: LucideIcons.mail,
               placeholder: 'john.doe@example.com',
               keyboardType: TextInputType.emailAddress,
             ),
@@ -70,6 +70,7 @@ class _Body extends StatelessWidget {
               name: _FormKeys.password,
               heading: 'Password',
               placeholder: 'Enter your password',
+              prefixIcon: LucideIcons.lock,
               validators: FormBuilderValidators.required(
                 errorText: 'Password is required',
               ),
@@ -93,6 +94,7 @@ class _Body extends StatelessWidget {
               builder: (context, state) {
                 final loading = state.login.isLoading;
                 return AppButton(
+                  mainAxisSize: .max,
                   label: 'Login',
                   onTap: () => screenState.onSubmit(context),
                   state: loading ? .disabled : .def,
