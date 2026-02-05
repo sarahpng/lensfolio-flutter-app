@@ -65,4 +65,16 @@ class Validators {
     final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
     return emailRegex.hasMatch(input);
   }
+
+  static String? Function(String?) match(
+    String? Function() matchValue, {
+    String? errorText,
+  }) {
+    return (String? value) {
+      if (value != matchValue()) {
+        return errorText ?? 'Values do not match.';
+      }
+      return null;
+    };
+  }
 }

@@ -2,6 +2,7 @@ import 'package:lensfolio/ui/screens/home/home.dart';
 import 'package:lensfolio/ui/screens/jobs/jobs.dart';
 import 'package:lensfolio/ui/screens/letters/letters.dart';
 import 'package:lensfolio/ui/screens/login/login.dart';
+import 'package:lensfolio/ui/screens/onboarding/onboarding.dart';
 import 'package:lensfolio/ui/screens/projects/projects.dart';
 import 'package:lensfolio/ui/screens/register/register.dart';
 import 'package:lensfolio/ui/screens/splash/splash.dart';
@@ -15,6 +16,7 @@ final appRoutes = <String, WidgetBuilder>{
   AppRoutes.login: (_) => const LoginScreen(),
   AppRoutes.register: (_) => const RegisterScreen(),
   AppRoutes.splash: (_) => const SplashScreen(),
+  AppRoutes.onboarding: (_) => const OnboardingScreen(),
 };
 
 Route<dynamic>? onGenerateRoutes(RouteSettings settings) {
