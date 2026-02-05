@@ -18,8 +18,8 @@ class _BodyState extends State<_Body> {
   Widget build(BuildContext context) {
     App.init(context);
 
-    final user = UserCubit.c(context, true);
-    final userData = user.state.login.data;
+    // final user = UserCubit.c(context, true);
+    // final userData = user.state.login.data;
 
     return Screen(
       bottomBar: true,

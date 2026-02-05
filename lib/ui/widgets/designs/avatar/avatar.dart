@@ -35,6 +35,7 @@ class Avatar extends StatelessWidget {
         child: image.isEmpty
             ? Image.asset(Assets.dummyProfile.path)
             : CachedNetworkImage(
+                fit: BoxFit.cover,
                 imageUrl: image,
                 errorWidget: (context, error, stackTrace) {
                   return Container(
