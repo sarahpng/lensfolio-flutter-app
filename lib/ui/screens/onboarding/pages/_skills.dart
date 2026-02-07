@@ -35,6 +35,18 @@ class _Skills extends StatelessWidget {
               ),
             ],
           ),
+          Space.y.t08,
+          Row(
+            children: [
+              Icon(
+                LucideIcons.info,
+                color: AppTheme.c.subText,
+                size: SpaceToken.t12,
+              ),
+              Space.x.t04,
+              Text('Optional', style: AppText.b1 + AppTheme.c.subText),
+            ],
+          ),
           Space.y.t20,
           Wrap(
             spacing: SpaceToken.t08,

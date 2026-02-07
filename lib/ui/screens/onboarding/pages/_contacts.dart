@@ -11,6 +11,10 @@ class _Contacts extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Contact Info', style: AppText.h1b),
+          Text(
+            'How can employers reach you?',
+            style: AppText.b1b + AppTheme.c.subText,
+          ),
           Space.y.t20,
           AppFormTextInput(
             name: _FormKeys.phone,
@@ -24,7 +28,18 @@ class _Contacts extends StatelessWidget {
             name: _FormKeys.location,
             heading: 'Location',
             placeholder: 'City, Country',
-            validators: FormBuilderValidators.required(),
+          ),
+          Space.y.t08,
+          Row(
+            children: [
+              Icon(
+                LucideIcons.info,
+                color: AppTheme.c.subText,
+                size: SpaceToken.t12,
+              ),
+              Space.x.t04,
+              Text('Optional', style: AppText.b1 + AppTheme.c.subText),
+            ],
           ),
         ],
       ),

@@ -32,13 +32,31 @@ class UserCubit extends Cubit<UserState> {
     }
   }
 
-  Future<void> register(Map<String, dynamic> values) async {
+  Future<void> register({
+    required Map<String, dynamic> techStack,
+    required List<String> skills,
+    required Map<String, dynamic> basicInfo,
+  }) async {
     emit(state.copyWith(register: state.register.toLoading()));
     try {
-      await UserRepo.ins.register(values);
+      await UserRepo.ins.register(
+        techStack: techStack,
+        skills: skills,
+        basicInfo: basicInfo,
+      );
       emit(state.copyWith(register: state.register.toSuccess()));
     } on Fault catch (e) {
       emit(state.copyWith(register: state.register.toFailed(fault: e)));
+    }
+  }
+
+  Future<void> verify(Map<String, dynamic> values) async {
+    emit(state.copyWith(verify: state.verify.toLoading()));
+    try {
+      final data = await UserRepo.ins.verify(values['email']);
+      emit(state.copyWith(verify: state.verify.toSuccess(data: data)));
+    } on Fault catch (e) {
+      emit(state.copyWith(verify: state.verify.toFailed(fault: e)));
     }
   }
 

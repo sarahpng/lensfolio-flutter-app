@@ -1,3 +1,5 @@
+/* ERROR: // [NEW_MOCK_METHOD] not found. */
+
 // ignore_for_file: unused_element
 part of 'user_repo.dart';
 

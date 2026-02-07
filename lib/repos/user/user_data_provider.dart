@@ -45,6 +45,7 @@ class _UserProvider {
         email: values['email'],
         password: values['password'],
       );
+      authResponse.user!.appLog();
       return authResponse;
     } catch (e, st) {
       if (e is AuthApiException) {
@@ -78,4 +79,22 @@ class _UserProvider {
   }
 
   // [NEW_PROVIDER_METHOD]
+  static Future<UserData?> verify(String email) async {
+    try {
+      final user = await AppSupabase.supabase
+          .from(SupaTables.users)
+          .select('email')
+          .eq('email', email)
+          .single();
+      print('user is $user');
+      if (user.isAvailable) return UserData.fromJson(user);
+      return null;
+    } catch (e, st) {
+      print('error is $e');
+      if (e is AuthApiException) {
+        throw SupaAuthFault.fromAuthApiException(e, st);
+      }
+      throw UnknownFault('Something went wrong!', st);
+    }
+  }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:lensfolio/blocs/user/cubit.dart';
 import 'package:lensfolio/configs/configs.dart';
 import 'package:lensfolio/ui/widgets/core/button/button.dart';
 import 'package:lensfolio/ui/widgets/forms/forms.dart';
@@ -14,9 +15,12 @@ import 'package:lensfolio/ui/widgets/core/screen/screen.dart';
 part 'static/_form_data.dart';
 part 'static/_form_keys.dart';
 
-part 'widgets/_contacts.dart';
-part 'widgets/_skills.dart';
-part 'widgets/_preferred_roles.dart';
+part 'pages/_contacts.dart';
+part 'pages/_skills.dart';
+part 'pages/_preferred_roles.dart';
+part 'pages/_tech_stack.dart';
+
+part 'widgets/card/_card.dart';
 
 part '_state.dart';
 
@@ -25,8 +29,11 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arguments =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+
     return ChangeNotifierProvider<_ScreenState>(
-      create: (_) => _ScreenState(),
+      create: (_) => _ScreenState(initialData: arguments),
       child: const _Body(),
     );
   }
@@ -38,11 +45,15 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenState = _ScreenState.s(context, true);
+    final initialValues = {..._FormData.initialValues()};
+    if (screenState.initialData != null) {
+      initialValues.addAll(screenState.initialData!);
+    }
 
     return Screen(
       formKey: screenState.formKey,
       keyboardHandler: true,
-      initialFormValue: _FormData.initialValues(),
+      initialFormValue: initialValues,
       child: SafeArea(
         child: Column(
           crossAxisAlignment: .stretch,
@@ -69,29 +80,19 @@ class _Body extends StatelessWidget {
                 controller: screenState.pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 onPageChanged: screenState.onPageChanged,
-                children: const [_Contacts(), _Skills(), _PreferredRoles()],
+                children: const [
+                  _Contacts(),
+                  _Skills(),
+                  _TechStack(),
+                  _PreferredRoles(),
+                ],
               ),
             ),
             Padding(
               padding: Space.a.t20,
-              child: Row(
-                children: [
-                  if (screenState.currentPage != 2)
-                    AppButton(
-                      label: 'Skip',
-                      style: AppButtonStyle.transparent,
-                      onTap: () => screenState.onNext(context),
-                    ),
-                  Space.x.t08,
-                  Expanded(
-                    child: AppButton(
-                      label: screenState.currentPage == 2
-                          ? 'Finish'
-                          : 'Continue',
-                      onTap: () => screenState.onNext(context),
-                    ),
-                  ),
-                ],
+              child: AppButton(
+                label: screenState.currentPage > 2 ? 'Finish' : 'Continue',
+                onTap: () => screenState.onNext(context),
               ),
             ),
           ],
