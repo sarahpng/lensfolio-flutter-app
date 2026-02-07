@@ -29,3 +29,4 @@ part '_model.dart';
 part 'text_input/content.dart';
 part 'text_input/text_input.dart';
 part 'date/contained_date_input.dart';
+part 'chips_input/chips_input.dart';
