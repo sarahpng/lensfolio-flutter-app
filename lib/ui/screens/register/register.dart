@@ -115,9 +115,9 @@ class _Body extends StatelessWidget {
               ),
               Space.y.t28,
               BlocBuilder<UserCubit, UserState>(
-                buildWhen: (a, b) => a.login != b.login,
+                buildWhen: (a, b) => a.verify != b.verify,
                 builder: (context, state) {
-                  final loading = state.login.isLoading;
+                  final loading = state.verify.isLoading;
                   return AppButton(
                     label: 'Register',
                     onTap: () => screenState.onSubmit(context),

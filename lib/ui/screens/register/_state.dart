@@ -13,8 +13,8 @@ class _ScreenState extends ChangeNotifier {
       if (!isValid) return;
       final values = form.value;
       final cleanValue = values.trimStringValues();
-
-      AppRoutes.onboarding.push(context, arguments: cleanValue);
+      UserCubit.c(context).verify(cleanValue);
+      // AppRoutes.onboarding.push(context, arguments: cleanValue);
     } catch (e) {
       print(e);
     }
