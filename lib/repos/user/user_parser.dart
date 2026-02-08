@@ -12,13 +12,13 @@ class _UserParser {
     Map<String, dynamic> payload = {};
     payload['email'] = basicInfo['email'];
     payload['password'] = basicInfo['password'];
-    payload['name'] = basicInfo['fullName'];
-    payload['phone'] = basicInfo['phone'];
-    if (basicInfo.containsKey('location')) {
-      payload['location'] = basicInfo['location'];
-    }
+    payload['full_name'] = basicInfo['fullName'];
+    payload['contact_details'] = {
+      'phoneNumber': basicInfo['phone'],
+      'address': basicInfo['location'] ?? '',
+    };
     payload['skills'] = skills;
-    payload['techStack'] = techStack;
+    // payload['techStack'] = techStack;
     return payload;
   }
 

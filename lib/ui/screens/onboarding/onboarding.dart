@@ -1,12 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:lensfolio/blocs/user/cubit.dart';
 import 'package:lensfolio/configs/configs.dart';
+import 'package:lensfolio/router/routes.dart';
 import 'package:lensfolio/ui/widgets/core/button/button.dart';
 import 'package:lensfolio/ui/widgets/forms/forms.dart';
+import 'package:lensfolio/utils/flash.dart';
 import 'package:provider/provider.dart';
 
 import 'package:lensfolio/ui/widgets/core/screen/screen.dart';
@@ -21,6 +24,8 @@ part 'pages/_preferred_roles.dart';
 part 'pages/_tech_stack.dart';
 
 part 'widgets/card/_card.dart';
+
+part 'listeners/_onboarding.dart';
 
 part '_state.dart';
 
@@ -54,6 +59,7 @@ class _Body extends StatelessWidget {
       formKey: screenState.formKey,
       keyboardHandler: true,
       initialFormValue: initialValues,
+      belowBuilders: [const _OnBoardingListener()],
       child: SafeArea(
         child: Column(
           crossAxisAlignment: .stretch,

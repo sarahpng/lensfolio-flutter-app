@@ -39,7 +39,7 @@ class UserRepo {
   Future<UserData> udpate(Map<String, dynamic> values) =>
       _UserProvider.udpate(values);
 
-  Future<UserData?> verify(String email) => _UserProvider.verify(email);
+  Future<String?> verify(String email) => _UserProvider.verify(email);
 
   // [REPO_METHOD]
 }

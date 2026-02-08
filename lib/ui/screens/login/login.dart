@@ -12,6 +12,7 @@ import 'package:lensfolio/ui/widgets/core/button/button.dart';
 import 'package:lensfolio/ui/widgets/forms/forms.dart';
 import 'package:lensfolio/ui/widgets/headless/scroll_column_expandable.dart';
 import 'package:lensfolio/utils/flash.dart';
+import 'package:lensfolio/utils/setup_cubit.dart';
 import 'package:provider/provider.dart';
 
 import 'package:lensfolio/ui/widgets/core/screen/screen.dart';

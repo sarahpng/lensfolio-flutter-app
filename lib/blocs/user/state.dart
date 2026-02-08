@@ -5,7 +5,7 @@ class UserState extends Equatable {
   // -- nested states -- //
   final BlocState<UserData> login;
   final BlocState<UserData> register;
-  final BlocState<UserData> verify;
+  final BlocState<String> verify;
   // [STATE_FIELDS]
 
   // --- state data --- //
@@ -26,7 +26,7 @@ class UserState extends Equatable {
   UserState copyWith({
     BlocState<UserData>? login,
     BlocState<UserData>? register,
-    BlocState<UserData>? verify,
+    BlocState<String>? verify,
     // [STATE_COPYWITH_PARAMS]
   }) {
     return UserState(
