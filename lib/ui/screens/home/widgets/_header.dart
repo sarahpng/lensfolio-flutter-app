@@ -33,7 +33,7 @@ class _Header extends StatelessWidget {
                         icon: LucideIcons.upload,
                       ),
                       PopUpModel(
-                        label: 'Download CV',
+                        label: 'Download Resume',
                         icon: LucideIcons.download,
                       ),
                       PopUpModel(label: 'Logout', icon: LucideIcons.power),

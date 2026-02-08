@@ -7,10 +7,10 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     App.init(context);
     final screenState = _ScreenState.s(context, true);
-    final jobsCubit = JobsCubit.c(context, true);
-    final jobsState = jobsCubit.state;
-    final jobs = jobsCubit.state.jobs;
-    final list = jobs?.jobs ?? [];
+    // final jobsCubit = JobsCubit.c(context, true);
+    // final jobsState = jobsCubit.state;
+    // final jobs = jobsCubit.state.jobs;
+    // final list = jobs?.jobs ?? [];
 
     return Screen(
       bottomBar: true,
@@ -22,14 +22,25 @@ class _Body extends StatelessWidget {
             children: [
               _Header(),
               Space.y.t12,
-              _Filters(),
-              Space.y.t12,
-              if (screenState._filtersType == _FiltersType.savedJobs) ...[],
-              if (jobsState.fetch.isSuccess &&
-                  screenState._filtersType != _FiltersType.savedJobs) ...[
-                ...list.map((job) => _JobCard(job)),
-              ],
-              Space.y.t100,
+              // _Filters(),
+              // Space.y.t12,
+              BlocBuilder<JobsCubit, JobsState>(
+                builder: (context, state) {
+                  return state.fetch.maybeWhen(
+                    loading: () => const Center(child: _Placeholder()),
+                    success: () {
+                      final list = state.jobs?.jobs ?? [];
+                      return Column(
+                        children: [
+                          ...list.map((job) => _JobCard(job)),
+                          Space.y.t100,
+                        ],
+                      );
+                    },
+                    orElse: () => const SizedBox.shrink(),
+                  );
+                },
+              ),
             ],
           ),
         ),

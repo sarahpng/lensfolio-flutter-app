@@ -15,11 +15,22 @@ class _Header extends StatelessWidget {
           style: AppText.b1 + AppTheme.c.subText,
         ),
         Space.y.t12,
-        AppFormTextInput(
-          name: '',
-          placeholder: 'Search Jobs',
-          prefixIcon: LucideIcons.search,
-          suffixIcon: LucideIcons.funnel,
+        Row(
+          children: [
+            Expanded(
+              child: AppFormTextInput(
+                name: '',
+                placeholder: 'Search Jobs',
+                prefixIcon: LucideIcons.search,
+              ),
+            ),
+            Space.x.t04,
+            AppButton(
+              icon: LucideIcons.funnel,
+              style: .transparent,
+              onTap: () {},
+            ),
+          ],
         ),
       ],
     );

@@ -80,6 +80,7 @@ dependencies:
   html: 0.15.6
 
   flutter_flavorizr: 2.4.1
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

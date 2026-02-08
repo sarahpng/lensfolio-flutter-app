@@ -45,7 +45,12 @@ class _UserProvider {
         email: values['email'],
         password: values['password'],
       );
-      authResponse.user!.appLog();
+      final data = await AppSupabase.supabase
+          .from(SupaTables.users)
+          .insert(values..remove('password'))
+          .select();
+      print('data is $data');
+      data.appLog();
       return authResponse;
     } catch (e, st) {
       if (e is AuthApiException) {
@@ -79,7 +84,7 @@ class _UserProvider {
   }
 
   // [NEW_PROVIDER_METHOD]
-  static Future<UserData?> verify(String email) async {
+  static Future<String?> verify(String email) async {
     try {
       final user = await AppSupabase.supabase
           .from(SupaTables.users)
@@ -87,7 +92,7 @@ class _UserProvider {
           .eq('email', email)
           .single();
       print('user is $user');
-      if (user.isAvailable) return UserData.fromJson(user);
+      if (user.isAvailable) return user['email'];
       return null;
     } catch (e, st) {
       print('error is $e');

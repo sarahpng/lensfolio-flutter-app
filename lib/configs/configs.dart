@@ -23,6 +23,7 @@ part 'theme/_typography.dart';
 part 'ui/_breakpoints.dart';
 part 'ui/_screen.dart';
 part 'ui/_media.dart';
+part 'ui/_unit.dart';
 
 part 'space/_model_widget.dart';
 part 'space/_model_edge_insets.dart';
@@ -54,7 +55,7 @@ class App {
     AppMedia.init(context);
     AppTheme.init(context);
     AppScreen.init();
-    // AppUnit.init();
+    AppUnit.init();
     AppText.init();
     Space.init();
 

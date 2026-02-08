@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:lensfolio/blocs/jobs/cubit.dart';
 import 'package:lensfolio/configs/configs.dart';
 import 'package:lensfolio/models/jobs/job.dart';
+import 'package:lensfolio/skeleton/skeleton.dart';
 import 'package:lensfolio/ui/widgets/core/button/button.dart';
 import 'package:lensfolio/ui/widgets/designs/avatar/avatar.dart';
 import 'package:lensfolio/ui/widgets/forms/forms.dart';
@@ -16,6 +18,7 @@ part '_state.dart';
 part 'widgets/_body.dart';
 part 'widgets/_header.dart';
 part 'widgets/_filters.dart';
+part 'widgets/_placeholder.dart';
 
 part 'widgets/card/_job_card.dart';
 
