@@ -20,9 +20,10 @@ class _Header extends StatelessWidget {
           ],
         ),
         AppButton(
-          label: 'Add',
-          style: AppButtonStyle.secondary,
-          icon: LucideIcons.plus,
+          icon: LucideIcons.search,
+          style: .transparent,
+          size: .large,
+          onTap: () {},
         ),
       ],
     );

@@ -7,14 +7,14 @@ class ProjectsState extends Equatable {
 
   // --- state data --- //
   final List<Projects>? projects;
-  final int uid;
+  final String uid;
   // [STATE_FIELDS]
 
   // --- state data --- //
   const ProjectsState({
     required this.fetchAll,
     this.projects,
-    this.uid = 0,
+    this.uid = '0',
     // [STATE_CONSTRUCTOR]
   });
 
@@ -23,12 +23,12 @@ class ProjectsState extends Equatable {
       // [STATE_DEF];
       fetchAll = BlocState(),
       projects = null,
-      uid = 0;
+      uid = '0';
 
   ProjectsState copyWith({
     BlocState<List<Projects>>? fetchAll,
     List<Projects>? projects,
-    int? uid,
+    String? uid,
     // [STATE_COPYWITH_PARAMS]
   }) {
     return ProjectsState(

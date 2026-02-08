@@ -20,7 +20,7 @@ class ProjectsCubit extends Cubit<ProjectsState> {
 
   ProjectsCubit() : super(ProjectsState.def());
 
-  Future<void> fetchAll(int uid) async {
+  Future<void> fetchAll(String uid) async {
     'Fetch all projects function was called'.appLog(
       level: .info,
       tag: 'PROJECTS_CUBIT: fetchAll()',
@@ -44,6 +44,7 @@ class ProjectsCubit extends Cubit<ProjectsState> {
   }
 
   // [NEW_METHOD]
-
+  void setupUid(String uid) => emit(state.copyWith(uid: uid));
+  void resetUid() => emit(state.copyWith(uid: '0'));
   void reset() => emit(ProjectsState.def());
 }

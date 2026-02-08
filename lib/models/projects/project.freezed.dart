@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Projects {
 
- int get id; int get uid; String get title; String get description; List<String> get technologies;@JsonKey(name: 'image_url') String? get imageUrl;@JsonKey(name: 'github_url') String? get githubUrl;@JsonKey(name: 'live_url') String? get liveUrl;@JsonKey(name: 'created_at') DateTime get createdAt;
+ int get id; String get uid; String get title; String get description;@JsonKey(defaultValue: []) List<String> get technologies;@JsonKey(name: 'image_url') String? get imageUrl;@JsonKey(name: 'github_url') String? get githubUrl;@JsonKey(name: 'live_url') String? get liveUrl;@JsonKey(name: 'created_at') DateTime get createdAt;
 /// Create a copy of Projects
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ProjectsCopyWith<$Res>  {
   factory $ProjectsCopyWith(Projects value, $Res Function(Projects) _then) = _$ProjectsCopyWithImpl;
 @useResult
 $Res call({
- int id, int uid, String title, String description, List<String> technologies,@JsonKey(name: 'image_url') String? imageUrl,@JsonKey(name: 'github_url') String? githubUrl,@JsonKey(name: 'live_url') String? liveUrl,@JsonKey(name: 'created_at') DateTime createdAt
+ int id, String uid, String title, String description,@JsonKey(defaultValue: []) List<String> technologies,@JsonKey(name: 'image_url') String? imageUrl,@JsonKey(name: 'github_url') String? githubUrl,@JsonKey(name: 'live_url') String? liveUrl,@JsonKey(name: 'created_at') DateTime createdAt
 });
 
 
@@ -69,7 +69,7 @@ class _$ProjectsCopyWithImpl<$Res>
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,uid: null == uid ? _self.uid : uid // ignore: cast_nullable_to_non_nullable
-as int,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,technologies: null == technologies ? _self.technologies : technologies // ignore: cast_nullable_to_non_nullable
 as List<String>,imageUrl: freezed == imageUrl ? _self.imageUrl : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -158,7 +158,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  int uid,  String title,  String description,  List<String> technologies, @JsonKey(name: 'image_url')  String? imageUrl, @JsonKey(name: 'github_url')  String? githubUrl, @JsonKey(name: 'live_url')  String? liveUrl, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String uid,  String title,  String description, @JsonKey(defaultValue: [])  List<String> technologies, @JsonKey(name: 'image_url')  String? imageUrl, @JsonKey(name: 'github_url')  String? githubUrl, @JsonKey(name: 'live_url')  String? liveUrl, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Projects() when $default != null:
 return $default(_that.id,_that.uid,_that.title,_that.description,_that.technologies,_that.imageUrl,_that.githubUrl,_that.liveUrl,_that.createdAt);case _:
@@ -179,7 +179,7 @@ return $default(_that.id,_that.uid,_that.title,_that.description,_that.technolog
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  int uid,  String title,  String description,  List<String> technologies, @JsonKey(name: 'image_url')  String? imageUrl, @JsonKey(name: 'github_url')  String? githubUrl, @JsonKey(name: 'live_url')  String? liveUrl, @JsonKey(name: 'created_at')  DateTime createdAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String uid,  String title,  String description, @JsonKey(defaultValue: [])  List<String> technologies, @JsonKey(name: 'image_url')  String? imageUrl, @JsonKey(name: 'github_url')  String? githubUrl, @JsonKey(name: 'live_url')  String? liveUrl, @JsonKey(name: 'created_at')  DateTime createdAt)  $default,) {final _that = this;
 switch (_that) {
 case _Projects():
 return $default(_that.id,_that.uid,_that.title,_that.description,_that.technologies,_that.imageUrl,_that.githubUrl,_that.liveUrl,_that.createdAt);}
@@ -196,7 +196,7 @@ return $default(_that.id,_that.uid,_that.title,_that.description,_that.technolog
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  int uid,  String title,  String description,  List<String> technologies, @JsonKey(name: 'image_url')  String? imageUrl, @JsonKey(name: 'github_url')  String? githubUrl, @JsonKey(name: 'live_url')  String? liveUrl, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String uid,  String title,  String description, @JsonKey(defaultValue: [])  List<String> technologies, @JsonKey(name: 'image_url')  String? imageUrl, @JsonKey(name: 'github_url')  String? githubUrl, @JsonKey(name: 'live_url')  String? liveUrl, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Projects() when $default != null:
 return $default(_that.id,_that.uid,_that.title,_that.description,_that.technologies,_that.imageUrl,_that.githubUrl,_that.liveUrl,_that.createdAt);case _:
@@ -211,15 +211,15 @@ return $default(_that.id,_that.uid,_that.title,_that.description,_that.technolog
 @JsonSerializable()
 
 class _Projects implements Projects {
-  const _Projects({required this.id, required this.uid, required this.title, required this.description, required final  List<String> technologies, @JsonKey(name: 'image_url') this.imageUrl, @JsonKey(name: 'github_url') this.githubUrl, @JsonKey(name: 'live_url') this.liveUrl, @JsonKey(name: 'created_at') required this.createdAt}): _technologies = technologies;
+  const _Projects({required this.id, required this.uid, required this.title, required this.description, @JsonKey(defaultValue: []) required final  List<String> technologies, @JsonKey(name: 'image_url') this.imageUrl, @JsonKey(name: 'github_url') this.githubUrl, @JsonKey(name: 'live_url') this.liveUrl, @JsonKey(name: 'created_at') required this.createdAt}): _technologies = technologies;
   factory _Projects.fromJson(Map<String, dynamic> json) => _$ProjectsFromJson(json);
 
 @override final  int id;
-@override final  int uid;
+@override final  String uid;
 @override final  String title;
 @override final  String description;
  final  List<String> _technologies;
-@override List<String> get technologies {
+@override@JsonKey(defaultValue: []) List<String> get technologies {
   if (_technologies is EqualUnmodifiableListView) return _technologies;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_technologies);
@@ -263,7 +263,7 @@ abstract mixin class _$ProjectsCopyWith<$Res> implements $ProjectsCopyWith<$Res>
   factory _$ProjectsCopyWith(_Projects value, $Res Function(_Projects) _then) = __$ProjectsCopyWithImpl;
 @override @useResult
 $Res call({
- int id, int uid, String title, String description, List<String> technologies,@JsonKey(name: 'image_url') String? imageUrl,@JsonKey(name: 'github_url') String? githubUrl,@JsonKey(name: 'live_url') String? liveUrl,@JsonKey(name: 'created_at') DateTime createdAt
+ int id, String uid, String title, String description,@JsonKey(defaultValue: []) List<String> technologies,@JsonKey(name: 'image_url') String? imageUrl,@JsonKey(name: 'github_url') String? githubUrl,@JsonKey(name: 'live_url') String? liveUrl,@JsonKey(name: 'created_at') DateTime createdAt
 });
 
 
@@ -284,7 +284,7 @@ class __$ProjectsCopyWithImpl<$Res>
   return _then(_Projects(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,uid: null == uid ? _self.uid : uid // ignore: cast_nullable_to_non_nullable
-as int,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,technologies: null == technologies ? _self._technologies : technologies // ignore: cast_nullable_to_non_nullable
 as List<String>,imageUrl: freezed == imageUrl ? _self.imageUrl : imageUrl // ignore: cast_nullable_to_non_nullable

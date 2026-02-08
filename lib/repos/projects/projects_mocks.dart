@@ -27,7 +27,7 @@ class _ProjectsMocks {
     });
   }
 
-  static Future<Map<String, dynamic>> fetchAll(int uid) {
+  static Future<Map<String, dynamic>> fetchAll(String uid) {
     final userProjects = _projects.where((p) => p['uid'] == uid).toList();
     return Future.value({
       'status': 200,
@@ -63,7 +63,7 @@ class _ProjectsMocks {
   static final List<Map<String, dynamic>> _projects = [
     {
       'id': 1,
-      'uid': 2,
+      'uid': '1c1647b0-75e9-4050-9173-859d85eda2d2',
       'title': 'Lensfolio',
       'description':
           'A portfolio app for photographers and developers to showcase their work. Built with Flutter and Supabase for seamless cross-platform experience.',
@@ -75,7 +75,7 @@ class _ProjectsMocks {
     },
     {
       'id': 2,
-      'uid': 1,
+      'uid': '1c1647b0-75e9-4050-9173-859d85eda2d2',
       'title': 'TaskFlow Pro',
       'description':
           'A modern task management app with real-time collaboration features. Includes kanban boards, time tracking, and team analytics.',
@@ -87,7 +87,7 @@ class _ProjectsMocks {
     },
     {
       'id': 3,
-      'uid': 2,
+      'uid': '1c1647b0-75e9-4050-9173-859d85eda2d2',
       'title': 'WeatherNow',
       'description':
           'Beautiful weather app with location-based forecasts, animated backgrounds, and severe weather alerts. Supports multiple locations.',
@@ -99,7 +99,7 @@ class _ProjectsMocks {
     },
     {
       'id': 4,
-      'uid': 2,
+      'uid': '1c1647b0-75e9-4050-9173-859d85eda2d2',
       'title': 'CryptoTracker',
       'description':
           'Real-time cryptocurrency portfolio tracker with price alerts, market charts, and news aggregation. Track your investments effortlessly.',
@@ -111,7 +111,19 @@ class _ProjectsMocks {
     },
     {
       'id': 5,
-      'uid': 1,
+      'uid': '1c1647b0-75e9-4050-9173-859d85eda2d2',
+      'title': 'FitJourney',
+      'description':
+          'Comprehensive fitness tracking app with workout plans, nutrition logging, and progress analytics. Includes social features for motivation.',
+      'technologies': ['Flutter', 'Supabase', 'HealthKit', 'Google Fit'],
+      'image_url': null,
+      'github_url': null,
+      'live_url': 'https://mhmz.dev',
+      'created_at': '2024-05-18T11:30:00.000Z',
+    },
+    {
+      'id': 6,
+      'uid': '1c1647b0-75e9-4050-9173-859d85eda2d2',
       'title': 'FitJourney',
       'description':
           'Comprehensive fitness tracking app with workout plans, nutrition logging, and progress analytics. Includes social features for motivation.',

@@ -8,12 +8,14 @@ part of 'project.dart';
 
 _Projects _$ProjectsFromJson(Map<String, dynamic> json) => _Projects(
   id: (json['id'] as num).toInt(),
-  uid: (json['uid'] as num).toInt(),
+  uid: json['uid'] as String,
   title: json['title'] as String,
   description: json['description'] as String,
-  technologies: (json['technologies'] as List<dynamic>)
-      .map((e) => e as String)
-      .toList(),
+  technologies:
+      (json['technologies'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList() ??
+      [],
   imageUrl: json['image_url'] as String?,
   githubUrl: json['github_url'] as String?,
   liveUrl: json['live_url'] as String?,
