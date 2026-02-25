@@ -2,22 +2,11 @@
 
 A Flutter application for creative professionals to showcase their portfolio.
 
+![Lensfolio Poster](images/lensfolio_poster.png)
+
 ## Project Overview
 
 Lensfolio is a mobile application built with Flutter that allows creative professionals, such as photographers and designers, to create and manage their portfolios. It provides a platform to showcase their work, skills, and experience. The application includes features like a user profile, a section for job opportunities, and a clean, modern user interface.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
 ## Folder Structure
 
