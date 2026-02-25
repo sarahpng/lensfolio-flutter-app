@@ -96,9 +96,16 @@ class _Body extends StatelessWidget {
             ),
             Padding(
               padding: Space.a.t20,
-              child: AppButton(
-                label: screenState.currentPage > 2 ? 'Finish' : 'Continue',
-                onTap: () => screenState.onNext(context),
+              child: BlocBuilder<UserCubit, UserState>(
+                buildWhen: (a, b) => a.register != b.register,
+                builder: (context, state) {
+                  final loading = state.verify.isLoading;
+                  return AppButton(
+                    state: loading ? .disabled : .def,
+                    label: screenState.currentPage > 2 ? 'Finish' : 'Continue',
+                    onTap: () => screenState.onNext(context),
+                  );
+                },
               ),
             ),
           ],
